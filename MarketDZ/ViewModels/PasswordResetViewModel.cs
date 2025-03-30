@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 using MarketDZ.Models;
+using MarketDZ.Views;
 using MarketDZ.Helpers;
 using MarketDZ.Services;
 
@@ -153,7 +154,7 @@ namespace MarketDZ.ViewModels
                 if (resetSuccessful)
                 {
                     await Shell.Current.DisplayAlert("Success", "Password reset successful", "OK");
-                    await Shell.Current.GoToAsync("//SignInPage");
+                    await Shell.Current.GoToAsync(nameof(SignInPage));
                 }
                 else
                 {

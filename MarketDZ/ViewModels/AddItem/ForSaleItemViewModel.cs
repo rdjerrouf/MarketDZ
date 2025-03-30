@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using MarketDZ.Services;
 using MarketDZ.Models;
+using MarketDZ.Views;
 using System.Diagnostics;
 using System.Text;
 
@@ -341,7 +342,7 @@ namespace MarketDZ.ViewModels.AddItem
                 {
                     Debug.WriteLine("No user found");
                     await Shell.Current.DisplayAlert("Error", "Please sign in to post items", "OK");
-                    await Shell.Current.GoToAsync("///SignInPage");
+                    await Shell.Current.GoToAsync(nameof(SignInPage));
                     return;
                 }
 
@@ -374,7 +375,7 @@ namespace MarketDZ.ViewModels.AddItem
                 {
                     Debug.WriteLine("Item saved successfully");
                     await Shell.Current.DisplayAlert("Success", "Your item has been posted!", "OK");
-                    await Shell.Current.GoToAsync("//MainPage");
+                    await Shell.Current.GoToAsync(nameof(ForSaleItemViewModel));
                 }
                 else
                 {

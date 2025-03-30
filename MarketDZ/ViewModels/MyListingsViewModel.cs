@@ -79,20 +79,20 @@ namespace MarketDZ.ViewModels
 
                 // Clear existing items and add fetched items
                 Items.Clear();
-                // In the LoadMyListingsAsync method
-                foreach (var item in userItems)
+
+                // In the LoadMyListingsAsync method - fixed variable redeclaration issues
+                foreach (var listingItem in userItems)
                 {
-                    string photoInfo = $"Item: {item.Title}, PhotoUrl: {item.PhotoUrl ?? "null"}";
-                    if (!string.IsNullOrEmpty(item.PhotoUrl))
+                    var itemPhotoInfo = $"Item: {listingItem.Title}, PhotoUrl: {listingItem.PhotoUrl ?? "null"}";
+                    if (!string.IsNullOrEmpty(listingItem.PhotoUrl))
                     {
-                        photoInfo += $", Path exists: {File.Exists(item.PhotoUrl)}";
+                        itemPhotoInfo += $", Path exists: {File.Exists(listingItem.PhotoUrl)}";
                     }
-                    Debug.WriteLine(photoInfo);
+                    Debug.WriteLine(itemPhotoInfo);
                     Debug.WriteLine($"AppDataDirectory: {FileSystem.AppDataDirectory}");
                     Debug.WriteLine($"CacheDirectory: {FileSystem.CacheDirectory}");
-                    Items.Add(item);
+                    Items.Add(listingItem);
                 }
-
             }
             catch (Exception ex)
             {

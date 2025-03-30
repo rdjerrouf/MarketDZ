@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using MarketDZ.Models;
 using MarketDZ.Converters;
-using System.Threading.Tasks;
+using MarketDZ.Views;
 using MarketDZ.Services;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
@@ -658,7 +658,7 @@ namespace MarketDZ.ViewModels.AddItem
                 {
                     Debug.WriteLine("No user found");
                     await Shell.Current.DisplayAlert("Error", "Please sign in to post jobs", "OK");
-                    await Shell.Current.GoToAsync("///SignInPage");
+                    await Shell.Current.GoToAsync(nameof(SignInPage));
                     return;
                 }
 
@@ -740,7 +740,7 @@ namespace MarketDZ.ViewModels.AddItem
                     ClearForm();
 
                     Debug.WriteLine("Navigating to main page");
-                    await Shell.Current.GoToAsync("//MainPage");
+                    await Shell.Current.GoToAsync(nameof(MainPage));
                 }
                 else
                 {

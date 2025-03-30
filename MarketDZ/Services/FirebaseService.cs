@@ -3,6 +3,8 @@ using Firebase.Database.Query;
 using MarketDZ.Models;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
 
 namespace MarketDZ.Services
 {
@@ -36,9 +38,9 @@ namespace MarketDZ.Services
         {
             if (_isInitialized) return;
 
+            await _initLock.WaitAsync();
             try
             {
-                await _initLock.WaitAsync();
                 if (_isInitialized) return;
 
                 Debug.WriteLine("Starting Firebase initialization");
@@ -268,19 +270,118 @@ namespace MarketDZ.Services
         {
             try
             {
-                var items = await GetCollectionAsync<Item>("items");
-                return items.Select(i => i.Object);
+                // Make a direct HTTP request to Firebase
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.GetStringAsync(
+                        "https://marketdz-a6db7-default-rtdb.firebaseio.com/items.json");
+
+                    var result = new List<Item>();
+
+                    // Parse the JSON response manually
+                    JArray array = JArray.Parse(response);
+
+                    // Skip the first element (which is null) and process the rest
+                    for (int i = 1; i < array.Count; i++)
+                    {
+                        JToken token = array[i];
+
+                        // Create user first because it's required for Item
+                        // Create user first because it's required for Item
+                        User user = new User
+                        {
+                            Id = token["PostedByUser"]?["Id"]?.Value<int>() ?? 0,
+                            DisplayName = token["PostedByUser"]?["DisplayName"]?.Value<string>() ?? "Unknown",
+                            Email = token["PostedByUser"]?["Email"]?.Value<string>() ?? "unknown@example.com",
+                            PasswordHash = token["PostedByUser"]?["PasswordHash"]?.Value<string>() ?? string.Empty,
+                            CreatedAt = token["PostedByUser"]?["CreatedAt"]?.Value<DateTime>() ?? DateTime.Now,
+                            IsAdmin = token["PostedByUser"]?["IsAdmin"]?.Value<bool>() ?? false,
+                            IsEmailVerified = token["PostedByUser"]?["IsEmailVerified"]?.Value<bool>() ?? false,
+                            ShowEmail = token["PostedByUser"]?["ShowEmail"]?.Value<bool>() ?? false,
+                            ShowPhoneNumber = token["PostedByUser"]?["ShowPhoneNumber"]?.Value<bool>() ?? false
+                        };
+
+
+                        // Now create the Item with required properties
+                        // Now create the Item with required properties
+                        Item item = new Item
+                        {
+                            Title = token["Title"]?.Value<string>() ?? "Unknown",
+                            Description = token["Description"]?.Value<string>() ?? "No description",
+                            Price = token["Price"] != null ? Convert.ToDecimal(token["Price"].Value<double>()) : 0m,
+                            Category = token["Category"]?.Value<string>() ?? "Unknown",
+                            PostedByUser = user
+                        };
+
+
+                        // Set additional properties
+                        item.Id = token["Id"]?.Value<int>() ?? 0;
+
+                        // Handle enum conversions
+                        if (token["Status"] != null)
+                            item.Status = (ItemStatus)token["Status"].Value<int>();
+
+                        if (token["State"] != null)
+                            item.State = (AlState?)token["State"].Value<int>();
+
+                        // Parse dates
+                        if (token["ListedDate"] != null)
+                            item.ListedDate = token["ListedDate"].Value<DateTime>();
+
+                        item.PostedByUserId = token["PostedByUserId"]?.Value<int>() ?? 0;
+                        item.PhotoUrl = token["PhotoUrl"]?.Value<string>() ?? string.Empty;
+
+                        // Add category-specific properties
+                        if (item.Category == "For Sale" && token["ForSaleCategory"] != null)
+                        {
+                            item.ForSaleCategory = (ForSaleCategory?)token["ForSaleCategory"].Value<int>();
+                        }
+                        else if (item.Category == "For Rent")
+                        {
+                            if (token["ForRentCategory"] != null)
+                                item.ForRentCategory = (ForRentCategory?)token["ForRentCategory"].Value<int>();
+
+                            item.RentalPeriod = token["RentalPeriod"]?.Value<string>() ?? string.Empty;
+
+                            if (token["AvailableFrom"] != null)
+                                item.AvailableFrom = token["AvailableFrom"].Value<DateTime>();
+
+                            if (token["AvailableTo"] != null)
+                                item.AvailableTo = token["AvailableTo"].Value<DateTime>();
+                        }
+                        else if (item.Category == "Jobs")
+                        {
+                            if (token["JobCategory"] != null)
+                                item.JobCategory = (JobCategory?)token["JobCategory"].Value<int>();
+
+                            item.JobType = token["JobType"]?.Value<string>() ?? string.Empty;
+                            item.JobLocation = token["JobLocation"]?.Value<string>() ?? string.Empty;
+                            item.CompanyName = token["CompanyName"]?.Value<string>() ?? string.Empty;
+
+                            if (token["ApplyMethod"] != null)
+                                item.ApplyMethod = (ApplyMethod?)token["ApplyMethod"].Value<int>();
+
+                            item.ApplyContact = token["ApplyContact"]?.Value<string>() ?? string.Empty;
+                        }
+
+                        result.Add(item);
+                    }
+
+                    Debug.WriteLine($"Successfully loaded {result.Count} items");
+                    return result;
+                }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error getting items: {ex.Message}");
+                if (ex.InnerException != null)
+                {
+                    Debug.WriteLine($"Inner exception: {ex.InnerException.Message}");
+                }
+                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
                 return Enumerable.Empty<Item>();
             }
         }
-
-        /// <summary>
-        /// Create a new item
-        /// </summary>
         public async Task<int> CreateItemAsync(Item item)
         {
             try

@@ -2,6 +2,7 @@
 using MarketDZ.Services;
 using MarketDZ.Extensions;
 using System.Windows.Input;
+using MarketDZ.Views;
 
 namespace MarketDZ.ViewModels
 {
@@ -33,7 +34,7 @@ namespace MarketDZ.ViewModels
             if (success)
             {
                 await ShowMessage("Success", "Email confirmed successfully!");
-                await Shell.Current.GoToAsync("//LoginPage");
+                await Shell.Current.GoToAsync(nameof(SignInPage));
             }
             else
             {

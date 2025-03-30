@@ -220,7 +220,7 @@ namespace MarketDZ.ViewModels
         private void EditProfile() => IsEditing = true;
 
         [RelayCommand]
-        private async Task SignIn() => await Shell.Current.GoToAsync("SignInPage");
+        private async Task SignIn() => await Shell.Current.GoToAsync(nameof(SignInPage));
 
         [RelayCommand]
         private async Task SaveProfile()
@@ -319,7 +319,7 @@ namespace MarketDZ.ViewModels
                                             { "email", user.Email }
                                         };
 
-                        await Shell.Current.GoToAsync("VerifyEmailPage", navigationParameter);
+                        await Shell.Current.GoToAsync(nameof(VerifyEmailPage), navigationParameter);
                     }
                     else
                     {
@@ -339,10 +339,10 @@ namespace MarketDZ.ViewModels
         }
 
         [RelayCommand]
-        private async Task ViewPostedItems() => await Shell.Current.GoToAsync("//MyListingsPage");
+        private async Task ViewPostedItems() => await Shell.Current.GoToAsync(nameof(MyListingsPage));
 
         [RelayCommand]
-        private async Task ViewFavoriteItems() => await Shell.Current.GoToAsync("//FavoritesPage");
+        private async Task ViewFavoriteItems() => await Shell.Current.GoToAsync(nameof(FavoritesPage));
 
         [RelayCommand]
         private async Task ViewRatings()
@@ -355,7 +355,7 @@ namespace MarketDZ.ViewModels
         }
 
         [RelayCommand]
-        private async Task ChangePassword() => await Shell.Current.GoToAsync("PasswordChangePage");
+        private async Task ChangePassword() => await Shell.Current.GoToAsync(nameof(PasswordChangePage));
 
         [RelayCommand]
         private async Task SignOut()

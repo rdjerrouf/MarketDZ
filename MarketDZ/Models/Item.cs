@@ -1,11 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using MarketDZ.Converters;
+using Newtonsoft.Json;
 
 namespace MarketDZ.Models
 {
     public class Item
     {
         public int Id { get; set; }
+
         public required string Title { get; set; }
+
         public required string Description { get; set; }
         public string? PhotoUrl { get; set; }
 
@@ -45,14 +49,16 @@ namespace MarketDZ.Models
         public ForRentCategory? ForRentCategory { get; set; }
 
         // User relationship
+        [JsonProperty("postedByUserId")]
         public int PostedByUserId { get; set; }
-        public required User PostedByUser { get; set; }  // Added required modifier
+
+        [JsonProperty("postedByUser")]
+        public required User PostedByUser { get; set; }
 
         // Status and collections
         public ItemStatus Status { get; set; } = ItemStatus.Active;
         public ICollection<User> FavoritedByUsers { get; set; } = [];
         public ICollection<ItemPhoto> Photos { get; set; } = [];
-
 
         // Navigation property for location
         public ItemLocation? ItemLocation { get; set; }
@@ -60,7 +66,8 @@ namespace MarketDZ.Models
         // Helper property to check if item has a location
         public bool HasLocation => ItemLocation != null;
 
-        // Add to your Item.cs model
+        // Additional properties
         public string? ImageUrl { get; set; }
+        public string? ImagePath { get; set; }
     }
 }

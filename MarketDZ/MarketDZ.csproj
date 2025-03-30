@@ -71,4 +71,13 @@
 	  <Folder Include="Views\AddItem\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Views\FavoritesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PasswordChangePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
