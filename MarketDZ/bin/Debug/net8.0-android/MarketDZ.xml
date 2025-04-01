@@ -1,0 +1,1681 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MarketDZ</name>
+    </assembly>
+    <members>
+        <member name="T:MarketDZ.Converters.GreaterThanZeroConverter">
+            <summary>
+            Converter that returns true if a value is greater than zero
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Converters.InverseBoolConverter">
+            <summary>
+            Converts boolean values to their inverse
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Converters.InverseBoolConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a boolean to its inverse value
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Converters.InverseBoolConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts back a boolean to its inverse value
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Converters.StringNotNullOrEmptyBoolConverter">
+            <summary>
+            Converts string to boolean based on whether it's null or empty
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Converters.StringNotNullOrEmptyBoolConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts a string to boolean - true if string is not null or empty
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Converters.StringNotNullOrEmptyBoolConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert back operation (not implemented)
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Converters.RatingColorConverter">
+            <summary>
+            Converter that determines the color for a star in a rating based on the rating value and star position
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Converters.RatingTextConverter">
+            <summary>
+            Converter that returns a text description based on a rating value
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Helpers.ImageHelper.PickImageAsync">
+            <summary>
+            Opens the device's image picker and allows the user to select an image
+            </summary>
+            <returns>A FileResult if an image was picked, null otherwise</returns>
+        </member>
+        <member name="M:MarketDZ.Helpers.ImageHelper.TakePhotoAsync">
+            <summary>
+            Takes a photo using the device camera
+            </summary>
+            <returns>A FileResult if a photo was taken, null otherwise</returns>
+        </member>
+        <member name="M:MarketDZ.Helpers.ImageHelper.CreateUniqueFileName(System.String,System.String)">
+            <summary>
+            Creates a unique filename for an image based on its purpose
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Helpers.ImageHelper.CompressImageAsync(System.IO.Stream,System.Int32)">
+            <summary>
+            Compresses an image for upload
+            </summary>
+        </member>
+        <member name="T:MarketDZ.MauiProgram">
+            <summary>
+            Static class responsible for MAUI application setup and configuration.
+            </summary>
+        </member>
+        <member name="M:MarketDZ.MauiProgram.InitializeFirebase(Microsoft.Maui.Hosting.MauiApp)">
+            <summary>
+            Initializes the Firebase connection.
+            </summary>
+            <param name="app">The MAUI application instance.</param>
+        </member>
+        <member name="M:MarketDZ.MauiProgram.CreateMauiApp">
+            <summary>
+            Creates and configures the MAUI app.
+            </summary>
+            <returns>The configured MAUI app instance.</returns>
+        </member>
+        <member name="M:MarketDZ.MauiProgram.ConfigureBasicSettings(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+            Configures basic MAUI application settings.
+            </summary>
+            <param name="builder">The MAUI app builder.</param>
+        </member>
+        <member name="M:MarketDZ.MauiProgram.ConfigureFirebase(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+            Configures Firebase settings and connection.
+            </summary>
+            <param name="builder">The MAUI app builder.</param>
+        </member>
+        <member name="M:MarketDZ.MauiProgram.RegisterServices(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+            Registers application services with dependency injection.
+            </summary>
+            <param name="builder">The MAUI app builder.</param>
+        </member>
+        <member name="M:MarketDZ.MauiProgram.ConfigureDebugSettings(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+            Configures debug settings for development.
+            </summary>
+            <param name="builder">The MAUI app builder.</param>
+        </member>
+        <member name="T:MarketDZ.Models.Dtos.ItemUpdateDto">
+            <summary>
+            Data Transfer Object for updating an existing item
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Models.Dtos.ProximitySearchRequest">
+            <summary>
+            Request model for proximity-based searches
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Dtos.ProximitySearchRequest.Latitude">
+            <summary>
+            Latitude of the center point for the search
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Dtos.ProximitySearchRequest.Longitude">
+            <summary>
+            Longitude of the center point for the search
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Dtos.ProximitySearchRequest.RadiusKm">
+            <summary>
+            Maximum distance in kilometers from the center point
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Dtos.ProximitySearchRequest.CategoryId">
+            <summary>
+            Optional category ID to filter by
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Dtos.ProximitySearchRequest.SearchTerm">
+            <summary>
+            Optional search term to filter by
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Dtos.ProximitySearchRequest.MinPrice">
+            <summary>
+            Optional minimum price
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Dtos.ProximitySearchRequest.MaxPrice">
+            <summary>
+            Optional maximum price
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Dtos.ProximitySearchRequest.SortByDistance">
+            <summary>
+            Flag to sort by distance (true) or most recent (false)
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Models.Message">
+            <summary>
+            Represents a message between users
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Message.Id">
+            <summary>
+            Unique identifier for the message
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Message.Content">
+            <summary>
+            Content of the message
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Message.SenderId">
+            <summary>
+            ID of sending user
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Message.ReceiverId">
+            <summary>
+            ID of receiving user
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Message.Timestamp">
+            <summary>
+            When the message was sent
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Message.IsRead">
+            <summary>
+            Whether message has been read
+            </summary>
+        </member>
+        <member name="P:MarketDZ.Models.Message.RelatedItemId">
+            <summary>
+            Optional reference to related item
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Services.FirebaseAuthService">
+            <summary>
+            Firebase implementation of the IAuthService interface
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.InitializeAsync">
+            <summary>
+            Initialize Firebase connection
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.GetUserByEmailAsync(System.String)">
+            <summary>
+            Get a user by their email address
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.UpdateUserProfileAsync(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Update a user's profile information
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.UpdateUserPrivacyAsync(System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Update a user's privacy settings
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.ChangePasswordAsync(System.String,System.String,System.String)">
+            <summary>
+            Change a user's password
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.RegisterUserAsync(MarketDZ.Models.User)">
+            <summary>
+            Register a new user
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.SignInAsync(System.String,System.String)">
+            <summary>
+            Authenticate a user with email and password
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.GetCurrentUserAsync">
+            <summary>
+            Get the current logged-in user
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.GetCurrentUserIdAsync">
+            <summary>
+            Get the ID of the current logged-in user
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.UpdateUserContactInfoAsync(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Update a user's contact information
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.ResetPasswordAsync(System.String,System.String)">
+            <summary>
+            Reset a user's password
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.IsEmailRegisteredAsync(System.String)">
+            <summary>
+            Check if an email is already registered
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.GetUserProfileAsync(System.Int32)">
+            <summary>
+            Get a user's profile information
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.SendEmailVerificationTokenAsync(System.Int32)">
+            <summary>
+            Send an email verification token to a user
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.VerifyEmailAsync(System.String)">
+            <summary>
+            Verify a user's email with a token
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.IsEmailVerifiedAsync(System.Int32)">
+            <summary>
+            Check if a user's email is verified
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.ConfirmEmailAsync(System.String,System.String)">
+            <summary>
+            Confirm a user's email with a token
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseAuthService.GenerateEmailVerificationTokenAsync(MarketDZ.Models.User)">
+            <summary>
+            Generate an email verification token for a user
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Services.FirebaseMessageService">
+            <summary>
+            Implements message-related operations using Firebase
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseMessageService.#ctor(MarketDZ.Services.FirebaseService)">
+            <summary>
+            Constructor that injects required services
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseMessageService.GetUserInboxMessagesAsync(System.Int32)">
+            <summary>
+            Retrieves all inbox messages for a specific user
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseMessageService.SendMessageAsync(MarketDZ.Models.Message)">
+            <summary>
+            Sends a new message
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseMessageService.MarkMessageAsReadAsync(System.Int32)">
+            <summary>
+            Marks a specific message as read
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseMessageService.DeleteMessageAsync(System.Int32)">
+            <summary>
+            Deletes a specific message
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseMessageService.GetMessageByIdAsync(System.Int32)">
+            <summary>
+            Retrieves a specific message by its ID
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Services.FirebaseService">
+            <summary>
+            Core service for interacting with Firebase Realtime Database
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.InitializeAsync">
+            <summary>
+            Initialize Firebase connection and verify access
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetAsync``1(System.String)">
+            <summary>
+            Get a single object from Firebase at the specified path
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetCollectionAsync``1(System.String)">
+            <summary>
+            Get a collection of objects from Firebase at the specified path
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.SetAsync``1(System.String,``0)">
+            <summary>
+            Save or update an object at the specified path
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.AddAsync``1(System.String,``0)">
+            <summary>
+            Add a new object to a collection with an auto-generated key
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.UpdateAsync``1(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Update specific properties of an object
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.DeleteAsync(System.String)">
+            <summary>
+            Delete an object at the specified path
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetUserByIdAsync(System.Int32)">
+            <summary>
+            Get a user by their unique ID
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetUserByEmailAsync(System.String)">
+            <summary>
+            Get a user by their email address
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.CreateUserAsync(MarketDZ.Models.User)">
+            <summary>
+            Create a new user
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.UpdateUserAsync(MarketDZ.Models.User)">
+            <summary>
+            Update an existing user
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetNextUserIdAsync">
+            <summary>
+            Get the next available user ID
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetItemByIdAsync(System.Int32)">
+            <summary>
+            Get an item by its unique ID
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetItemsAsync">
+            <summary>
+            Get all items
+            </summary>
+            
+            <summary>
+            Get all items - handles both dictionary and array formats
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.CreateItemAsync(MarketDZ.Models.Item)">
+            <summary>
+            Create a new item
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.UpdateItemAsync(MarketDZ.Models.Item)">
+            <summary>
+            Update an existing item
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.DeleteItemAsync(System.Int32)">
+            <summary>
+            Delete an item
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetItemsByUserIdAsync(System.Int32)">
+            <summary>
+            Get all items posted by a specific user
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetNextItemIdAsync">
+            <summary>
+            Get the next available item ID
+            </summary>
+            <summary>
+            Get the next available item ID (updated for key-value structure)
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.MigrateDatabaseAsync">
+            <summary>
+            Permanently fixes the database structure by converting arrays to key-value pairs
+            </summary>
+            <summary>
+            Permanently fixes the database structure by converting arrays to key-value pairs
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.MigrateCollectionIfNeededAsync``1(System.String)">
+            <summary>
+            Helper method to migrate a collection from array to dictionary format if needed
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetMessageByIdAsync(System.Int32)">
+            <summary>
+            Get a message by its unique ID
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.CreateMessageAsync(MarketDZ.Models.Message)">
+            <summary>
+            Create a new message
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.UpdateMessageAsync(MarketDZ.Models.Message)">
+            <summary>
+            Update an existing message
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetMessagesForUserAsync(System.Int32)">
+            <summary>
+            Get all messages for a specific user (sent or received)
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetNextMessageIdAsync">
+            <summary>
+            Get the next available message ID
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.CreateVerificationTokenAsync(MarketDZ.Models.VerificationToken)">
+            <summary>
+            Create a verification token
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetVerificationTokenAsync(System.String)">
+            <summary>
+            Get a verification token by its token string
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseService.GetNextTokenIdAsync">
+            <summary>
+            Get the next available token ID
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Services.FirebaseSetupUtility">
+            <summary>
+            Utility for initializing and setting up Firebase data
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseSetupUtility.#ctor(MarketDZ.Services.FirebaseService,MarketDZ.Services.IMediaService)">
+            <summary>
+            Constructor for the setup utility
+            </summary>
+            <param name="firebaseService">Firebase service</param>
+            <param name="mediaService">Media service for handling file transfers</param>
+        </member>
+        <member name="P:MarketDZ.Services.FirebaseSetupUtility.SetupLog">
+            <summary>
+            Get the log of the setup process
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseSetupUtility.InitializeFirebaseAsync">
+            <summary>
+            Initialize Firebase with basic data structures
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseSetupUtility.CreateSampleAdminUserAsync">
+            <summary>
+            Create a sample admin user for testing
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseSetupUtility.CreateSampleCategoriesAsync">
+            <summary>
+            Create sample categories in Firebase
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.FirebaseSetupUtility.CreateSampleItemAsync(System.Int32)">
+            <summary>
+            Create a sample item in Firebase for testing
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Services.IMessageService">
+            <summary>
+            Defines contract for message-related operations in the marketplace
+            </summary>
+        </member>
+        <member name="M:MarketDZ.Services.IMessageService.GetUserInboxMessagesAsync(System.Int32)">
+            <summary>
+            Retrieves all messages for a specific user
+            </summary>
+            <param name="userId">ID of the user whose messages are to be retrieved</param>
+            <returns>Collection of messages for the user</returns>
+        </member>
+        <member name="M:MarketDZ.Services.IMessageService.SendMessageAsync(MarketDZ.Models.Message)">
+            <summary>
+            Sends a new message
+            </summary>
+            <param name="message">Message to be sent</param>
+            <returns>True if message sent successfully, false otherwise</returns>
+        </member>
+        <member name="M:MarketDZ.Services.IMessageService.MarkMessageAsReadAsync(System.Int32)">
+            <summary>
+            Marks a specific message as read
+            </summary>
+            <param name="messageId">ID of the message to mark as read</param>
+            <returns>True if message status updated successfully, false otherwise</returns>
+        </member>
+        <member name="M:MarketDZ.Services.IMessageService.DeleteMessageAsync(System.Int32)">
+            <summary>
+            Deletes a specific message
+            </summary>
+            <param name="messageId">ID of the message to delete</param>
+            <returns>True if message deleted successfully, false otherwise</returns>
+        </member>
+        <member name="M:MarketDZ.Services.IMessageService.GetMessageByIdAsync(System.Int32)">
+            <summary>
+            Retrieves a specific message by its ID
+            </summary>
+            <param name="messageId">ID of the message to retrieve</param>
+            <returns>Message if found, null otherwise</returns>
+        </member>
+        <member name="T:MarketDZ.Services.IUserSessionService">
+            <summary>
+            Manages user session state and persistence
+            </summary>
+        </member>
+        <member name="T:MarketDZ.Services.MockEmailService">
+            <summary>
+            Mock implementation of email service for development purposes
+            </summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.AddItem.AddItemViewModel">
+            <summary>
+            ViewModel for the category selection page when adding new items
+            Handles navigation to specific item creation pages based on category
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:MarketDZ.ViewModels.AddItem.AddItemViewModel.ForSale">
+            <summary>
+            Navigates to the For Sale item creation page
+            Used for items being sold outright
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.AddItem.AddItemViewModel.Rental">
+            <summary>
+            Navigates to the Rental item creation page
+            Used for property and item rentals with date ranges
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.AddItem.AddItemViewModel.Job">
+            <summary>
+            Navigates to the Job listing creation page
+            Used for posting job opportunities
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.AddItem.AddItemViewModel.Service">
+            <summary>
+            Navigates to the Service listing creation page
+            Used for offering services
+            </summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.AddItemViewModel.forSaleCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.AddItemViewModel.ForSaleCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.AddItemViewModel.ForSaleCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.AddItemViewModel.ForSale"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.AddItemViewModel.rentalCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.AddItemViewModel.RentalCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.AddItemViewModel.RentalCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.AddItemViewModel.Rental"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.AddItemViewModel.jobCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.AddItemViewModel.JobCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.AddItemViewModel.JobCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.AddItemViewModel.Job"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.AddItemViewModel.serviceCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.AddItemViewModel.ServiceCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.AddItemViewModel.ServiceCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.AddItemViewModel.Service"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel.uploadPhotoCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel.UploadPhotoCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel.UploadPhotoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel.UploadPhoto"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel.saveCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel.SaveCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel.SaveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.ForSaleItemViewModel.Save"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.AddItem.JobItemViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:MarketDZ.ViewModels.AddItem.JobItemViewModel.PhoneRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match if at the beginning of the string.<br/>
+            ○ Match '+' atomically, optionally.<br/>
+            ○ Match '(' atomically, optionally.<br/>
+            ○ Match a character in the set [0-9] exactly 3 times.<br/>
+            ○ Match ')' atomically, optionally.<br/>
+            ○ Match a character in the set [-.\s] atomically, optionally.<br/>
+            ○ Match a character in the set [0-9] exactly 3 times.<br/>
+            ○ Match a character in the set [-.\s] atomically, optionally.<br/>
+            ○ Match a character in the set [0-9] atomically at least 4 and at most 6 times.<br/>
+            ○ Match if at the end of the string or if before an ending newline.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.Title">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._title"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.EmploymentType">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._employmentType"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.SalaryPeriod">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._salaryPeriod"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.StartDate">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._startDate"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.ApplyContactError">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._applyContactError"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.CompanyName">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._companyName"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.CompanyNameError">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._companyNameError"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.JobLocation">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._jobLocation"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.JobLocationError">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._jobLocationError"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.TitleError">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._titleError"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.DescriptionError">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._descriptionError"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.SalaryError">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._salaryError"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.EmploymentTypeError">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._employmentTypeError"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.DateError">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._dateError"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.IsBusy">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._isBusy"/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.SelectedJobCategory">
+            <inheritdoc cref="F:MarketDZ.ViewModels.AddItem.JobItemViewModel._selectedJobCategory"/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.JobItemViewModel.saveCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.SaveCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.JobItemViewModel.SaveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.JobItemViewModel.Save"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.AddItem.RentalItemViewModel">
+            <summary>
+            ViewModel for managing rental items.
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:MarketDZ.ViewModels.AddItem.RentalItemViewModel.#ctor(MarketDZ.Services.IItemService,MarketDZ.Services.IAuthService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MarketDZ.ViewModels.AddItem.RentalItemViewModel"/> class.
+            </summary>
+            <param name="itemService">The item service.</param>
+            <param name="authService">The authentication service.</param>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.RentalItemViewModel.addPhotoCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.RentalItemViewModel.AddPhotoCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.RentalItemViewModel.AddPhotoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.RentalItemViewModel.AddPhoto"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.RentalItemViewModel.removePhotoCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.RentalItemViewModel.RemovePhotoCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.RentalItemViewModel.RemovePhotoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.RentalItemViewModel.RemovePhoto(System.String)"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.RentalItemViewModel.saveCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.RentalItemViewModel.SaveCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.RentalItemViewModel.SaveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.RentalItemViewModel.Save"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.AddItem.ServiceItemViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.AddItem.ServiceItemViewModel.saveCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.AddItem.ServiceItemViewModel.SaveCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.AddItem.ServiceItemViewModel.SaveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.AddItem.ServiceItemViewModel.Save"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.BlockedUsersViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.BlockedUsersViewModel.refreshCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.BlockedUsersViewModel.RefreshCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.BlockedUsersViewModel.RefreshCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.BlockedUsersViewModel.Refresh"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.BlockedUsersViewModel.unblockUserCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.BlockedUsersViewModel.UnblockUserCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.BlockedUsersViewModel.UnblockUserCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.BlockedUsersViewModel.UnblockUser(MarketDZ.Models.User)"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.CreateRatingViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.CreateRatingViewModel.submitRatingCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.CreateRatingViewModel.SubmitRatingCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.CreateRatingViewModel.SubmitRatingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.CreateRatingViewModel.SubmitRating"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.CreateRatingViewModel.cancelCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.CreateRatingViewModel.CancelCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.CreateRatingViewModel.CancelCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.CreateRatingViewModel.Cancel"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.CreateRatingViewModel.setRatingCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.CreateRatingViewModel.SetRatingCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.CreateRatingViewModel.SetRatingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.CreateRatingViewModel.SetRating(System.Int32)"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.InboxViewModel">
+            <summary>
+            Manages the inbox view, handling message retrieval, display, and interactions
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.InboxViewModel.Messages">
+            <summary>
+            Collection of messages to be displayed in the inbox
+            Uses ObservableCollection for real-time UI updates
+            </summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.InboxViewModel._isLoading">
+            <summary>
+            Indicates whether messages are currently being loaded
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.InboxViewModel.RefreshMessagesAsync">
+            <summary>
+            Refreshes the inbox by reloading messages
+            Triggered manually by user pull-to-refresh or other refresh mechanisms
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.InboxViewModel.OpenMessageAsync(MarketDZ.Models.Message)">
+            <summary>
+            Opens a specific message and marks it as read
+            Navigates to message details page
+            </summary>
+            <param name="message">Selected message to open</param>
+        </member>
+        <member name="M:MarketDZ.ViewModels.InboxViewModel.DeleteMessageAsync(MarketDZ.Models.Message)">
+            <summary>
+            Deletes a specific message
+            Provides user confirmation before deletion
+            </summary>
+            <param name="message">Message to be deleted</param>
+        </member>
+        <member name="F:MarketDZ.ViewModels.InboxViewModel.loadMessagesCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.InboxViewModel.LoadMessagesCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.InboxViewModel.LoadMessagesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.InboxViewModel.LoadMessagesAsync"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.InboxViewModel.refreshMessagesCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.InboxViewModel.RefreshMessagesCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.InboxViewModel.RefreshMessagesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.InboxViewModel.RefreshMessagesAsync"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.InboxViewModel.openMessageCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.InboxViewModel.OpenMessageCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.InboxViewModel.OpenMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.InboxViewModel.OpenMessageAsync(MarketDZ.Models.Message)"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.InboxViewModel.deleteMessageCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.InboxViewModel.DeleteMessageCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.InboxViewModel.DeleteMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.InboxViewModel.DeleteMessageAsync(MarketDZ.Models.Message)"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.ItemDetailViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemDetailViewModel.viewSellerProfileCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemDetailViewModel.ViewSellerProfileCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemDetailViewModel.ViewSellerProfileCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemDetailViewModel.ViewSellerProfile"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemDetailViewModel.reportItemCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemDetailViewModel.ReportItemCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemDetailViewModel.ReportItemCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemDetailViewModel.ReportItem"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemDetailViewModel.contactSellerCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemDetailViewModel.ContactSellerCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemDetailViewModel.ContactSellerCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemDetailViewModel.ContactSeller"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemDetailViewModel.toggleFavoriteCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemDetailViewModel.ToggleFavoriteCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemDetailViewModel.ToggleFavoriteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemDetailViewModel.ToggleFavorite"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemDetailViewModel.shareItemCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemDetailViewModel.ShareItemCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemDetailViewModel.ShareItemCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemDetailViewModel.ShareItem"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemDetailViewModel.viewOnMapCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemDetailViewModel.ViewOnMapCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemDetailViewModel.ViewOnMapCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemDetailViewModel.ViewOnMap"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemDetailViewModel.managePhotosCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemDetailViewModel.ManagePhotosCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemDetailViewModel.ManagePhotosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemDetailViewModel.ManagePhotos"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemDetailViewModel.manageStatusCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemDetailViewModel.ManageStatusCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemDetailViewModel.ManageStatusCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemDetailViewModel.ManageStatus"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.ItemMapViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemMapViewModel.openDirectionsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemMapViewModel.OpenDirectionsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemMapViewModel.OpenDirectionsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemMapViewModel.OpenDirections"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ItemMapViewModel.reportItemCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ItemMapViewModel.ReportItemCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ItemMapViewModel.ReportItemCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ItemMapViewModel.ReportItem"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.MainViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.PhotoItems">
+            <inheritdoc cref="F:MarketDZ.ViewModels.MainViewModel.photoItems"/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.toggleFiltersCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.ToggleFiltersCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.ToggleFiltersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.ToggleFilters"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.clearFiltersCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.ClearFiltersCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.ClearFiltersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.ClearFilters"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.filterByStateCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.FilterByStateCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.FilterByStateCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.FilterByState(System.Nullable{MarketDZ.Models.AlState})"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.filterByCategoryAndStateCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.FilterByCategoryAndStateCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.FilterByCategoryAndStateCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.FilterByCategoryAndState(System.String)"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.forSaleCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.ForSaleCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.ForSaleCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.ForSale"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.jobsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.JobsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.JobsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.Jobs"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.servicesCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.ServicesCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.ServicesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.Services"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.rentalsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.RentalsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.RentalsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.Rentals"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.postCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.PostCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.PostCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.Post"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.inboxCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.InboxCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.InboxCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.Inbox"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.myListingsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.MyListingsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.MyListingsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.MyListings"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.homeCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.HomeCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.HomeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.Home"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.accountCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.AccountCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.AccountCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.Account"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.refreshCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.RefreshCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.RefreshCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.Refresh"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MainViewModel.applyFiltersCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MainViewModel.ApplyFiltersCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MainViewModel.ApplyFiltersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MainViewModel.ApplyFilters"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.MessageDetailViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MessageDetailViewModel.sendReplyCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MessageDetailViewModel.SendReplyCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MessageDetailViewModel.SendReplyCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MessageDetailViewModel.SendReply"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MessageDetailViewModel.deleteMessageCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MessageDetailViewModel.DeleteMessageCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MessageDetailViewModel.DeleteMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MessageDetailViewModel.DeleteMessage"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MessageDetailViewModel.viewRelatedItemCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MessageDetailViewModel.ViewRelatedItemCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MessageDetailViewModel.ViewRelatedItemCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MessageDetailViewModel.ViewRelatedItem"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.MyListingsViewModel">
+            <summary>
+            ViewModel responsible for managing a user's item listings
+            Implements MVVM pattern with CommunityToolkit.Mvvm
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:MarketDZ.ViewModels.MyListingsViewModel.#ctor(MarketDZ.Services.IItemService,MarketDZ.Services.IAuthService)">
+            <summary>
+            Constructor with dependency injection
+            Initializes services and item collection
+            </summary>
+            <param name="itemService">Service for item-related operations</param>
+            <param name="authService">Service for authentication operations</param>
+        </member>
+        <member name="M:MarketDZ.ViewModels.MyListingsViewModel.LoadMyListingsAsync">
+            <summary>
+            Command to load user's listings
+            Asynchronous method with error handling
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.MyListingsViewModel.DeleteItemAsync(MarketDZ.Models.Item)">
+            <summary>
+            Command to delete a specific item
+            Includes user confirmation and error handling
+            </summary>
+            <param name="item">Item to be deleted</param>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MyListingsViewModel.loadMyListingsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MyListingsViewModel.LoadMyListingsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MyListingsViewModel.LoadMyListingsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MyListingsViewModel.LoadMyListingsAsync"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MyListingsViewModel.deleteItemCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MyListingsViewModel.DeleteItemCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MyListingsViewModel.DeleteItemCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MyListingsViewModel.DeleteItemAsync(MarketDZ.Models.Item)"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.MyListingsViewModel.myListingsClickedCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.MyListingsViewModel.MyListingsClickedCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.MyListingsViewModel.MyListingsClickedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.MyListingsViewModel.OnMyListingsClicked"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.NearbyItemsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.NearbyItemsViewModel.loadNearbyItemsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.NearbyItemsViewModel.LoadNearbyItemsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.NearbyItemsViewModel.LoadNearbyItemsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.NearbyItemsViewModel.LoadNearbyItemsAsync"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.NearbyItemsViewModel.updateSearchRadiusCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.NearbyItemsViewModel.UpdateSearchRadiusCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.NearbyItemsViewModel.UpdateSearchRadiusCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.NearbyItemsViewModel.UpdateSearchRadius"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.NearbyItemsViewModel.refreshCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.NearbyItemsViewModel.RefreshCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.NearbyItemsViewModel.RefreshCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.NearbyItemsViewModel.Refresh"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.NearbyItemsViewModel.viewItemDetailsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.NearbyItemsViewModel.ViewItemDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.NearbyItemsViewModel.ViewItemDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.NearbyItemsViewModel.ViewItemDetails(MarketDZ.Models.Item)"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.NearbyItemsViewModel.viewOnMapCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.NearbyItemsViewModel.ViewOnMapCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.NearbyItemsViewModel.ViewOnMapCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.NearbyItemsViewModel.ViewOnMap(MarketDZ.Models.Item)"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.PasswordResetViewModel">
+            <summary>
+            ViewModel for handling password reset functionality
+            </summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PasswordResetViewModel.Email">
+            <summary>
+            Email of the user requesting password reset
+            </summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PasswordResetViewModel.NewPassword">
+            <summary>
+            New password for the user
+            </summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PasswordResetViewModel.ConfirmPassword">
+            <summary>
+            Confirmation of the new password
+            </summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PasswordResetViewModel.ErrorMessage">
+            <summary>
+            Error message to display to the user
+            </summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PasswordResetViewModel.ResetPasswordCommand">
+            <summary>
+            Command to initiate password reset
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.PasswordResetViewModel.#ctor(MarketDZ.Services.IAuthService)">
+            <summary>
+            Constructor for PasswordResetViewModel
+            </summary>
+            <param name="authService">Authentication service for password reset</param>
+        </member>
+        <member name="F:MarketDZ.ViewModels.PasswordResetViewModel._isEmailValid">
+            <summary>
+            Validates email format
+            </summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.PasswordResetViewModel._isPasswordValid">
+            <summary>
+            Validates password strength and confirmation
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.PasswordResetViewModel.UpdateErrorMessage">
+            <summary>
+            Updates error message based on validation results
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.PasswordResetViewModel.CanResetPassword">
+            <summary>
+            Determines if password reset can be attempted
+            </summary>
+        </member>
+        <member name="M:MarketDZ.ViewModels.PasswordResetViewModel.ResetPasswordAsync">
+            <summary>
+            Attempts to reset the user's password
+            </summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.PhotoManagementViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.PhotoManagementViewModel.refreshPhotosCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.PhotoManagementViewModel.RefreshPhotosCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PhotoManagementViewModel.RefreshPhotosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.PhotoManagementViewModel.RefreshPhotos"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.PhotoManagementViewModel.addPhotoCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.PhotoManagementViewModel.AddPhotoCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PhotoManagementViewModel.AddPhotoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.PhotoManagementViewModel.AddPhoto"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.PhotoManagementViewModel.handlePhotoTappedCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.PhotoManagementViewModel.HandlePhotoTappedCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PhotoManagementViewModel.HandlePhotoTappedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.PhotoManagementViewModel.HandlePhotoTapped(MarketDZ.Models.ItemPhoto)"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.PhotoManagementViewModel.goBackCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.PhotoManagementViewModel.GoBackCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.PhotoManagementViewModel.GoBackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.PhotoManagementViewModel.GoBack"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.ProfileViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.editProfileCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.EditProfileCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.EditProfileCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.EditProfile"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.signInCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.SignInCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.SignInCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.SignIn"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.saveProfileCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.SaveProfileCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.SaveProfileCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.SaveProfile"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.cancelEditCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.CancelEditCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.CancelEditCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.CancelEdit"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.verifyEmailCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.VerifyEmailCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.VerifyEmailCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.VerifyEmail"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.viewPostedItemsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.ViewPostedItemsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.ViewPostedItemsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.ViewPostedItems"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.viewFavoriteItemsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.ViewFavoriteItemsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.ViewFavoriteItemsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.ViewFavoriteItems"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.viewRatingsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.ViewRatingsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.ViewRatingsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.ViewRatings"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.changePasswordCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.ChangePasswordCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.ChangePasswordCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.ChangePassword"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.signOutCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.SignOutCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.SignOutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.SignOut"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.uploadProfilePictureCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.UploadProfilePictureCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.UploadProfilePictureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.UploadProfilePicture"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ProfileViewModel.manageBlockedUsersCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ProfileViewModel.ManageBlockedUsersCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ProfileViewModel.ManageBlockedUsersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ProfileViewModel.ManageBlockedUsers"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.RegistrationViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.RegistrationViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.RegistrationViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.RegistrationViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.RegistrationViewModel.Register"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.RegistrationViewModel.goToSignInCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.RegistrationViewModel.GoToSignInCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.RegistrationViewModel.GoToSignInCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.RegistrationViewModel.GoToSignIn"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.ReportItemViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ReportItemViewModel.submitReportCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ReportItemViewModel.SubmitReportCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ReportItemViewModel.SubmitReportCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ReportItemViewModel.SubmitReport"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.ReportItemViewModel.cancelCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.ReportItemViewModel.CancelCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.ReportItemViewModel.CancelCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.ReportItemViewModel.Cancel"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.SearchViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.SearchViewModel.searchCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.SearchViewModel.SearchCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.SearchViewModel.SearchCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.SearchViewModel.Search"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.SearchViewModel.clearFiltersCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.SearchViewModel.ClearFiltersCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.SearchViewModel.ClearFiltersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.SearchViewModel.ClearFilters"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.SetLocationViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.SetLocationViewModel.useCurrentLocationCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.SetLocationViewModel.UseCurrentLocationCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.SetLocationViewModel.UseCurrentLocationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.SetLocationViewModel.UseCurrentLocation"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.SetLocationViewModel.searchAddressCommandCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.SetLocationViewModel.SearchAddressCommandCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.SetLocationViewModel.SearchAddressCommandCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.SetLocationViewModel.SearchAddressCommand"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.SetLocationViewModel.saveLocationCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.SetLocationViewModel.SaveLocationCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.SetLocationViewModel.SaveLocationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.SetLocationViewModel.SaveLocation"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.SignInViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.SignInViewModel.signInCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.SignInViewModel.SignInCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.SignInViewModel.SignInCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.SignInViewModel.SignIn"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.SignInViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.SignInViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.SignInViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.SignInViewModel.Register"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.UserProfileViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.UserProfileViewModel.viewUserItemsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.UserProfileViewModel.ViewUserItemsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.UserProfileViewModel.ViewUserItemsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.UserProfileViewModel.ViewUserItems"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.UserProfileViewModel.viewUserRatingsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.UserProfileViewModel.ViewUserRatingsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.UserProfileViewModel.ViewUserRatingsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.UserProfileViewModel.ViewUserRatings"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.UserProfileViewModel.blockUserCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.UserProfileViewModel.BlockUserCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.UserProfileViewModel.BlockUserCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.UserProfileViewModel.BlockUser"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.UserProfileViewModel.unblockUserCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.UserProfileViewModel.UnblockUserCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.UserProfileViewModel.UnblockUserCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.UserProfileViewModel.UnblockUser"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.UserRatingsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.UserRatingsViewModel.refreshRatingsCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.UserRatingsViewModel.RefreshRatingsCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.UserRatingsViewModel.RefreshRatingsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.UserRatingsViewModel.RefreshRatings"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.UserRatingsViewModel.viewItemCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.UserRatingsViewModel.ViewItemCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.UserRatingsViewModel.ViewItemCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.UserRatingsViewModel.ViewItem(System.Int32)"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.UserRatingsViewModel.markHelpfulCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.UserRatingsViewModel.MarkHelpfulCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.UserRatingsViewModel.MarkHelpfulCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MarketDZ.ViewModels.UserRatingsViewModel.MarkHelpful(MarketDZ.Models.Rating)"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.ViewModels.VerifyEmailViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.ViewModels.VerifyEmailViewModel.resendVerificationCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.VerifyEmailViewModel.ResendVerificationCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.VerifyEmailViewModel.ResendVerificationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.VerifyEmailViewModel.ResendVerification"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.VerifyEmailViewModel.checkVerificationCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.VerifyEmailViewModel.CheckVerificationCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.VerifyEmailViewModel.CheckVerificationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.VerifyEmailViewModel.CheckVerification"/>.</summary>
+        </member>
+        <member name="F:MarketDZ.ViewModels.VerifyEmailViewModel.backToProfileCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.ViewModels.VerifyEmailViewModel.BackToProfileCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.ViewModels.VerifyEmailViewModel.BackToProfileCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.ViewModels.VerifyEmailViewModel.BackToProfile"/>.</summary>
+        </member>
+        <member name="T:MarketDZ.Views.BlockedUsersPage">
+            <inheritdoc/>
+        </member>
+        <member name="F:MarketDZ.Views.BlockedUsersPage.manageBlockedUsersCommand">
+            <summary>The backing field for <see cref="P:MarketDZ.Views.BlockedUsersPage.ManageBlockedUsersCommand"/>.</summary>
+        </member>
+        <member name="P:MarketDZ.Views.BlockedUsersPage.ManageBlockedUsersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MarketDZ.Views.BlockedUsersPage.ManageBlockedUsers"/>.</summary>
+        </member>
+        <member name="M:MarketDZ.Views.MainPage.#ctor(MarketDZ.ViewModels.MainViewModel)">
+            <summary>
+            Initialize MainPage with proper dependency injection
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EmploymentType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EmploymentType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SalaryPeriod">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SalaryPeriod" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StartDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StartDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ApplyContactError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ApplyContactError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CompanyName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CompanyName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CompanyNameError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CompanyNameError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.JobLocation">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "JobLocation" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.JobLocationError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "JobLocationError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TitleError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TitleError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DescriptionError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DescriptionError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SalaryError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SalaryError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EmploymentTypeError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EmploymentTypeError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DateError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DateError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedJobCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedJobCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PhotoItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PhotoItems" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EmploymentType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EmploymentType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SalaryPeriod">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SalaryPeriod" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StartDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StartDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ApplyContactError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ApplyContactError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CompanyName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CompanyName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CompanyNameError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CompanyNameError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.JobLocation">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "JobLocation" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.JobLocationError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "JobLocationError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TitleError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TitleError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DescriptionError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DescriptionError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SalaryError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SalaryError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EmploymentTypeError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EmploymentTypeError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DateError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DateError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedJobCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedJobCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PhotoItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PhotoItems" generated properties.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.PhoneRegex_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the PhoneRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.PhoneRegex_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PhoneRegex_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.PhoneRegex_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PhoneRegex_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.PhoneRegex_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PhoneRegex_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PhoneRegex_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PhoneRegex_0.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+    </members>
+</doc>
